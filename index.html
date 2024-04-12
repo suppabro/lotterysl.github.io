@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lottery Number Generator</h1>
+        <table id="lotteryTable">
+            <thead>
+                <tr>
+                    <th>Lottery Number</th>
+                </tr>
+            </thead>
+            <tbody id="lotteryBody">
+            </tbody>
+        </table>
+        <button onclick="generateNumbers()">Generate</button>
+        <p class="watermark">Created by supuna</p>
+    </div>
+
+    <script>
+        function generateNumbers() {
+            let tableBody = document.getElementById('lotteryBody');
+            tableBody.innerHTML = '';
+            for (let i = 0; i <= 99; i++) {
+                let number = i.toString().padStart(2, '0');
+                let lotteryNumber = '1828 93' + number + ' 291';
+                let row = '<tr><td>' + lotteryNumber + '</td></tr>';
+                tableBody.innerHTML += row;
+            }
+        }
+    </script>
+</body>
+</html>
